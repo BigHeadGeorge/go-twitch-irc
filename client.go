@@ -415,6 +415,11 @@ func NewClient(username, oauth string) *Client {
 	}
 }
 
+// NewAnonymousClient creates a new anonymous client
+func NewAnonymousClient() *Client {
+	return NewClient("justinfan123123", "oauth:123123123")
+}
+
 // OnConnect attach callback to when a connection has been established
 func (c *Client) OnConnect(callback func()) {
 	c.onConnect = callback

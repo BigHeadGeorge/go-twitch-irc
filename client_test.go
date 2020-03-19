@@ -299,6 +299,15 @@ func TestCanCreateClient(t *testing.T) {
 	}
 }
 
+func TestCanCreateAnonymousClient(t *testing.T) {
+	t.Parallel()
+	client := NewAnonymousClient()
+
+	if reflect.TypeOf(client) != reflect.TypeOf(&Client{}) {
+		t.Error("client is not of type Client")
+	}
+}
+
 func TestCanConnectAndAuthenticate(t *testing.T) {
 	t.Parallel()
 	const oauthCode = "oauth:123123132"
